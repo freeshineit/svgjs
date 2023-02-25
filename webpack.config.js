@@ -6,7 +6,9 @@ module.exports = (env, argv) => {
   const distPath = path.resolve(__dirname, isProd ? "docs" : "dist");
   return {
     devServer: {
-      contentBase: distPath,
+      static: {
+        directory: distPath
+      },
       compress: isProd,
       port: 8000
     },
@@ -34,7 +36,6 @@ module.exports = (env, argv) => {
         patterns: [{ from: "./public", to: distPath }]
       })
     ],
-    watch: argv.mode !== "production",
     resolve: {
       // A little overkill for our tutorial but useful.
       extensions: [".ts", ".tsx", ".js", ".jsx", ".mts", ".mjs"]
