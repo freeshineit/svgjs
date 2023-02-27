@@ -62,3 +62,28 @@ cd docs && http-server -p 8080 .
     </g>
 </svg>
 ```
+
+## svg.js
+
+```ts
+import { SVG } from "@svgdotjs/svg.js";
+
+const draw = SVG().addTo("body").size(300, 300);
+```
+### rect
+
+```ts
+// Container.rect(width?: number, height?: number): Rect
+draw.rect(100, 100)
+    .fill("red") // fill 填充颜色
+    .attr({// 属性
+        x: 100, // x轴位置
+        y: 100  // y轴位置
+    });
+```
+
+### circle
+
+### line
+
+### text
